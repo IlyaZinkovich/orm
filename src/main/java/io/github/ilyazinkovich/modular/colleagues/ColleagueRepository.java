@@ -4,8 +4,6 @@ import java.util.Set;
 
 public interface ColleagueRepository {
 
-  ColleagueId nextIdentity();
-
   void save(final Colleague colleague);
 
   Colleague findById(final ColleagueId colleagueId);

@@ -1,6 +1,8 @@
 package io.github.ilyazinkovich.modular.comment;
 
-public class AuthorId {
+import java.io.Serializable;
+
+public class AuthorId implements Serializable {
 
   private Long id;
 

@@ -8,8 +8,7 @@ public class Colleague {
   public Colleague() {
   }
 
-  public Colleague(final ColleagueId colleagueId, final String name) {
-    this.colleagueId = colleagueId;
+  public Colleague(final String name) {
     this.name = name;
   }
 

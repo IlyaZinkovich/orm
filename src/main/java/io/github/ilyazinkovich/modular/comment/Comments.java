@@ -12,9 +12,8 @@ public class Comments {
 
   public CommentId writeComment(final TicketId ticketId, final AuthorId authorId,
       final String text) {
-    final CommentId commentId = commentRepository.nextIdentity();
-    final Comment comment = new Comment(commentId, text, ticketId, authorId);
+    final Comment comment = new Comment(text, ticketId, authorId);
     commentRepository.save(comment);
-    return commentId;
+    return comment.commentId();
   }
 }

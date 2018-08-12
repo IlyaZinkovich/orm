@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<hibernate-mapping default-access="field" default-cascade="all"
+  xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+  <class name="io.github.ilyazinkovich.modular.colleagues.Colleague" table="COLLEAGUES" lazy="true">
+    <composite-id name="colleagueId">
+      <key-property name="id" column="ID" type="java.lang.Long"/>
+    </composite-id>
+    <property name="name" column="NAME" type="java.lang.String"/>
+    <sql-insert>INSERT INTO COLLEAGUES (NAME) VALUES (?)</sql-insert>
+  </class>
+  <class name="io.github.ilyazinkovich.modular.comment.Comment" table="COMMENTS" lazy="true">
+    <composite-id name="commentId">
+      <key-property name="id" column="ID" type="java.lang.Long"/>
+      <generator class="org.hibernate.id.IdentityGenerator"/>
+    </composite-id>
+    <property name="text" column="TEXT" type="java.lang.String"/>
+    <component name="authorId">
+      <property name="id" column="AUTHOR_ID" type="java.lang.Long"/>
+    </component>
+    <component name="ticketId">
+      <property name="id" column="TICKET_ID" type="java.lang.Long"/>
+    </component>
+  </class>
+  <class name="io.github.ilyazinkovich.modular.ticket.Ticket" table="TICKETS" lazy="true">
+    <composite-id name="ticketId">
+      <key-property name="id" column="ID" type="java.lang.Long"/>
+      <generator class="org.hibernate.id.IdentityGenerator"/>
+    </composite-id>
+    <property name="description" column="DESCRIPTION" type="java.lang.String"/>
+    <component name="reporterId">
+      <property name="id" column="REPORTER_ID" type="java.lang.Long"/>
+    </component>
+  </class>
+</hibernate-mapping>

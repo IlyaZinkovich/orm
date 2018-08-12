@@ -12,9 +12,8 @@ public class Comment {
   public Comment() {
   }
 
-  public Comment(final CommentId commentId, final String text,
+  public Comment(final String text,
       final TicketId ticketId, final AuthorId authorId) {
-    this.commentId = commentId;
     this.text = text;
     this.ticketId = ticketId;
     this.authorId = authorId;

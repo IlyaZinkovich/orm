@@ -9,9 +9,8 @@ public class Ticket {
   public Ticket() {
   }
 
-  public Ticket(final TicketId ticketId, final String description,
+  public Ticket(final String description,
       final ReporterId reporterId) {
-    this.ticketId = ticketId;
     this.description = description;
     this.reporterId = reporterId;
   }

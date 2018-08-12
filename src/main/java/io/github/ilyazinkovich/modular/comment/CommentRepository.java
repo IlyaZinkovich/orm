@@ -5,8 +5,6 @@ import java.util.List;
 
 public interface CommentRepository {
 
-  CommentId nextIdentity();
-
   void save(final Comment comment);
 
   List<Comment> findByTicketId(final TicketId ticketId);

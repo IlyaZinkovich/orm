@@ -1,6 +1,8 @@
 package io.github.ilyazinkovich.modular.ticket;
 
-public class ReporterId {
+import java.io.Serializable;
+
+public class ReporterId implements Serializable {
 
   private Long id;
 

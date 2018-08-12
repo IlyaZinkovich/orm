@@ -9,9 +9,8 @@ public class Tickets {
   }
 
   public TicketId createTicket(final ReporterId reporterId, final String description) {
-    final TicketId ticketId = ticketRepository.nextIdentity();
-    final Ticket ticket = new Ticket(ticketId, description, reporterId);
+    final Ticket ticket = new Ticket(description, reporterId);
     ticketRepository.save(ticket);
-    return ticketId;
+    return ticket.ticketId();
   }
 }

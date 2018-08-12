@@ -9,9 +9,8 @@ public class Colleagues {
   }
 
   public ColleagueId registerColleague(final String colleagueName) {
-    final ColleagueId colleagueId = colleagueRepository.nextIdentity();
-    final Colleague colleague = new Colleague(colleagueId, colleagueName);
+    final Colleague colleague = new Colleague(colleagueName);
     colleagueRepository.save(colleague);
-    return colleagueId;
+    return colleague.colleagueId();
   }
 }
