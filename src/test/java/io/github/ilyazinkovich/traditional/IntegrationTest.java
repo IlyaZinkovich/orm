@@ -20,7 +20,7 @@ class IntegrationTest {
     try (final Session session = sessionFactory.openSession()) {
       final Colleague colleague = new Colleague("Bob");
       session.save(colleague);
-      assertEquals(1L, colleague.colleagueId().longValue());
+      assertEquals(1L, colleague.colleagueId().id().longValue());
       final Ticket ticket = new Ticket("description", colleague);
       session.save(ticket);
       assertEquals(1L, ticket.ticketId().longValue());

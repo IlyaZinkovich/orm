@@ -6,7 +6,6 @@
       <key-property name="id" column="ID" type="java.lang.Long"/>
     </composite-id>
     <property name="name" column="NAME" type="java.lang.String"/>
-    <sql-insert>INSERT INTO COLLEAGUES (NAME) VALUES (?)</sql-insert>
   </class>
   <class name="io.github.ilyazinkovich.modular.comment.Comment" table="COMMENTS" lazy="true">
     <composite-id name="commentId">

@@ -25,6 +25,9 @@ public class Comment {
   @JoinColumn(name = "AUTHOR_ID")
   private Colleague author;
 
+  public Comment() {
+  }
+
   public Comment(final String text,
       final Ticket ticket, final Colleague author) {
     this.text = text;

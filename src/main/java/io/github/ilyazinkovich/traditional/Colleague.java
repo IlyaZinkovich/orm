@@ -1,11 +1,8 @@
 package io.github.ilyazinkovich.traditional;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 import java.util.List;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -13,9 +10,8 @@ import javax.persistence.Table;
 @Table(name = "COLLEAGUES")
 public class Colleague {
 
-  @Id
-  @GeneratedValue(strategy = IDENTITY)
-  private Long colleagueId;
+  @EmbeddedId
+  private ColleagueId colleagueId;
   private String name;
   @OneToMany(mappedBy = "author")
   private List<Comment> comments;
@@ -27,7 +23,7 @@ public class Colleague {
     this.name = name;
   }
 
-  public Long colleagueId() {
+  public ColleagueId colleagueId() {
     return colleagueId;
   }
 
